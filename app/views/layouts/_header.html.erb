@@ -17,7 +17,11 @@
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Meet the Team", team_path %></li>
       <% if user_signed_in? %>
-      <li><%= link_to "Leave a comment", new_pin_path %></li>
+      <li>
+        <%=link_to new_pin_path do %>
+        <span class="glyphicon glyphicon-plus"></span> Leave a comment
+        <% end %>
+      </li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
       <li><%= link_to "Sign in", new_user_session_path %>
